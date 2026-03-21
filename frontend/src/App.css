@@ -1,0 +1,46 @@
+body{
+background:linear-gradient(135deg,#020617,#0f172a);
+font-family:sans-serif;
+color:white;
+}
+
+.glass{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+border-radius:15px;
+padding:20px;
+margin:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+button{
+background:#22c55e;
+border:none;
+padding:8px 15px;
+margin:5px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+input{
+padding:10px;
+border-radius:8px;
+border:none;
+margin:10px;
+}
+
+.cv-logo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    background-color: rgba(240, 248, 255, 0);
+    transition: filter 0.3s ease;
+    background: transparent;
+    overflow: hidden;
+    border-radius: 45%;
+}
+
+/* .cv-logo-img:hover {
+    filter: invert(1) sepia(1) saturate(10) hue-rotate(220deg) brightness(1.5);
+} */

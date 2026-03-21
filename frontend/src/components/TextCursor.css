@@ -1,0 +1,22 @@
+/* ── Full screen fixed overlay — works on any page ── */
+.text-cursor-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  overflow: visible;
+}
+
+/* ── Each trail item ── */
+.text-cursor-item {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  font-family: 'JetBrains Mono', monospace;
+}

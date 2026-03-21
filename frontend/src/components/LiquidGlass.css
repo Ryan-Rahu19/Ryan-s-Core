@@ -1,0 +1,180 @@
+/* ============================================================
+   LIQUID GLASS — Apple iOS 26 style
+   Usage: add className="liquid-glass" to any button or element
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&display=swap');
+
+.liquid-glass {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+
+    /* ── Core glass ── */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(180%) brightness(1.15);
+    -webkit-backdrop-filter: blur(20px) saturate(180%) brightness(1.15);
+
+    /* ── Outer border — thin specular rim ── */
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.35),
+        0 2px 8px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* ── Top specular highlight (the bright oval at top) ── */
+.liquid-glass::before {
+    content: '';
+    position: absolute;
+    top: 6%;
+    left: 15%;
+    width: 70%;
+    height: 38%;
+    border-radius: 100px;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.55) 0%,
+            rgba(255, 255, 255, 0.08) 100%);
+    filter: blur(3px);
+    pointer-events: none;
+}
+
+/* ── Bottom inner glow ── */
+.liquid-glass::after {
+    content: '';
+    position: absolute;
+    bottom: 8%;
+    left: 20%;
+    width: 60%;
+    height: 25%;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.12);
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+.liquid-glass:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.45),
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.liquid-glass:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        0 1px 4px rgba(0, 0, 0, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* ══════════════════════════════════════════════════════════
+   VARIANTS
+   ══════════════════════════════════════════════════════════ */
+
+/* Green tinted — for primary/CTA buttons */
+.liquid-glass-green {
+    background: rgba(34, 197, 94, 0.112);
+    box-shadow:
+        0 0 0 1px rgba(52, 211, 153, 0.373),
+        0 2px 8px rgba(0, 0, 0, 0.042),
+        0 8px 32px rgba(34, 197, 94, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.liquid-glass-green:hover {
+    background: rgba(34, 197, 94, 0.32);
+    box-shadow:
+        0 0 0 1px rgba(52, 211, 153, 0.6),
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 12px 40px rgba(34, 197, 94, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* Red tinted — for delete/danger buttons */
+.liquid-glass-red {
+    background: rgba(239, 68, 68, 0.2);
+    box-shadow:
+        0 0 0 1px rgba(248, 113, 113, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(239, 68, 68, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.liquid-glass-red:hover {
+    background: rgba(239, 68, 68, 0.3);
+    box-shadow:
+        0 0 0 1px rgba(248, 113, 113, 0.55),
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 12px 40px rgba(239, 68, 68, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Yellow tinted — for edit buttons */
+.liquid-glass-yellow {
+    background: rgba(251, 191, 36, 0.18);
+    box-shadow:
+        0 0 0 1px rgba(251, 191, 36, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(251, 191, 36, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.liquid-glass-yellow:hover {
+    background: rgba(251, 191, 36, 0.28);
+    box-shadow:
+        0 0 0 1px rgba(251, 191, 36, 0.55),
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 12px 40px rgba(251, 191, 36, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Blue tinted — for share/info buttons */
+.liquid-glass-blue {
+    background: rgba(14, 165, 233, 0.18);
+    box-shadow:
+        0 0 0 1px rgba(56, 189, 248, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.25),
+        0 8px 32px rgba(14, 165, 233, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.liquid-glass-blue:hover {
+    background: rgba(14, 165, 233, 0.28);
+    box-shadow:
+        0 0 0 1px rgba(56, 189, 248, 0.55),
+        0 4px 16px rgba(0, 0, 0, 0.3),
+        0 12px 40px rgba(14, 165, 233, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ── Disabled state ── */
+.liquid-glass:disabled,
+.liquid-glass[disabled] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none !important;
+}

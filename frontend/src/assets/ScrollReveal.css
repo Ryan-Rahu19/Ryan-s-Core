@@ -1,0 +1,16 @@
+.scroll-reveal {
+    margin: 20px 0;
+}
+
+.scroll-reveal-text h2 {
+    font-size: 200px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.word {
+    font-size: 70px;
+   letter-spacing: 2px;
+    margin-right: 0.25em;
+    display: inline-block;
+}

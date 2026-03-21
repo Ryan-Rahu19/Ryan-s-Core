@@ -1,0 +1,32 @@
+body{
+background:linear-gradient(135deg,#020617,#0f172a);
+font-family:sans-serif;
+color:white;
+margin:0;
+}
+
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:15px;
+padding:20px;
+margin:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+button{
+background:#22c55e;
+border:none;
+padding:8px 15px;
+margin:5px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+input,select{
+padding:10px;
+border-radius:8px;
+border:none;
+margin:10px;
+}
